@@ -1,3 +1,12 @@
+/****************************************************************************************
+ *                                                                                      *
+ *  @Ankit Dimri                                                                        *
+ *  A simple code to find the radius and diamemter of a given graph                     *
+ *  Radius and diameter of a graph are minimum and maximum eccentricity respectively    *
+ *  of any node or vertex in a graph                                                    *
+ *                                                                                      *
+ ****************************************************************************************/
+
 #include <iostream>
 #include <vector>
 #include <queue>

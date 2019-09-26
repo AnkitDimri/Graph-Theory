@@ -1,3 +1,12 @@
+/****************************************************************************************
+ *                                                                                      *
+ *  @Ankit Dimri                                                                        *
+ *  A implimentation of a code to find the first and second largest element in an       *
+ *  unordered set in n+log(n)-1 comparisons where n is the length of the set.           *
+ *  HINT: Finding the largest in n-1 comparisons and 2nd largest in log(n) comparisons  *
+ *                                                                                      *
+ ****************************************************************************************/
+
 #include <iostream>
 #include <vector>
 

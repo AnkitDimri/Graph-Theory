@@ -17,17 +17,19 @@
      int n, ele, max1, max2;
 
      std::cout << "\n\n\t Enter the size of the unordered set : ";
-     std::cin >> n;
+     std::cin >> n; // Enter the size (user input)
 
      std::cout << "\n\t Enter the elements of the unordered set : ";
+     /* Enter the elements one by one */
      for (int i = 0; i < n; i++) {
 
          std::cin >> ele;
-         v.push_back (ele);
+         v.push_back (ele); // elements pushed back into the vector
 
      }
 
-     t.push_back (v);
+     t.push_back (v); // initial tree level (inverted tree)
+     /* Create new levels in accordance to the algorithm */
      for (int i = 0; i < n-1; i += 2)
          temp.push_back ( (v [i] > v [i+1])?v [i]: v [i+1]);
 
@@ -35,9 +37,10 @@
          temp [temp.size ()-1] = temp [temp.size ()-1] > v [n-1]? temp [temp.size ()-1]:v [n-1];
 
      t.push_back (temp);
-     v.clear ();
+     v.clear (); // clear the vector for reuse
      v = temp;
-     temp.clear ();
+     temp.clear (); // clear the vector for reuse
+     /* loop till the top element is found */
      while (v.size () != 1) {
 
          n = v.size ();

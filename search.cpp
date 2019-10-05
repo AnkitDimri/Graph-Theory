@@ -12,7 +12,7 @@
   * elements are initially put in the leaves and every consequtive pair is compared to
   * find the larger or the smaller number of the pair and put in the next layer.
   * Traverses similarly into an inverted tree and the last level consists of the
-  * largerst element we intend to find. This though takes n-1 comparisons/
+  * largerst element we intend to find. This though takes n-1 comparisons
   */
 #include <iostream>
 #include <vector>

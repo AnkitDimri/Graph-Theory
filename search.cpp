@@ -12,10 +12,12 @@
   * elements are initially put in the leaves and every consequtive pair is compared to
   * find the larger or the smaller number of the pair and put in the next layer.
   * Traverses similarly into an inverted tree and the last level consists of the
-  * largerst element we intend to find. This though takes n-1 comparisons
+  * largerst element we intend to find. This though takes n-1 comparisons to find the
+  * first largest element. and second largest in log (n) comparions.
   */
 #include <iostream>
 #include <vector>
+#include <limits.h>
 
  int main(int argc, char const *argv[]) {
 
@@ -36,6 +38,7 @@
      }
 
      t.push_back (v); // initial tree level (inverted tree)
+
      /* Create new levels in accordance to the algorithm */
      for (int i = 0; i < n-1; i += 2)
          temp.push_back ( (v [i] > v [i+1])?v [i]: v [i+1]);
@@ -43,7 +46,7 @@
      if (n%2 != 0)
          temp [temp.size ()-1] = temp [temp.size ()-1] > v [n-1]? temp [temp.size ()-1]:v [n-1];
 
-     t.push_back (temp);
+     t.push_back (temp); // Add tree levels with half number of nodes
      v.clear (); // clear the vector for reuse
      v = temp;
      temp.clear (); // clear the vector for reuse
@@ -70,24 +73,40 @@
      max1 = t [t.size () - 1][0];
 
      // Making unordered set of log(n) elements to compare to find second largest element
+     max2 = INT_MIN;
      for (int i = 0; i < t.size ()-1; i++) {
          n = t [i].size ();
          for (int j = 0; j < t [i].size ()-1; j += 2) {
-             if (t [i][j] == max1)
-                 v.push_back (t [i][j+1]);
-             else if (t [i][j+1] == max1)
-                     v.push_back (t [i][j]);
+             if (t [i][j] == max1) {
+                 //v.push_back (t [i][j+1]);
+                 if (t [i][j+1] > max2)
+                     max2 = t [i][j+1];
+             }
+             else if (t [i][j+1] == max1) {
+                     //v.push_back (t [i][j]);
+                     if (t [i][j] > max2)
+                         max2 = t [i][j];
+             }
          }
-         if (n%2 != 0) {
-             if (t [i][n-2] == max1 || t [0][n-3] == max1)
-                 v.push_back (t [i][n-1]);
 
-             else if (t [i][n-1] == max1)
-                 v.push_back (t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]);
+         /* case to handle when the lenght of vector is odd */
+         if (n%2 != 0) {
+             if (t [i][n-2] == max1 || t [0][n-3] == max1) {
+                 //v.push_back (t [i][n-1]);
+                 if (t [i][n-1] > max2)
+                     max2 = t [i][n-1];
+             }
+
+             else if (t [i][n-1] == max1) {
+                 //v.push_back (t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]);
+                 int m;
+                 if ((m = t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]) > max2)
+                     max2 = m;
+             }
          }
      }
 
-     n = v.size ();
+    /* n = v.size ();
      // Searching for second largest element in the unordered set
      t1.push_back (v);
      for (int i = 0; i < n-1; i += 2)
@@ -115,10 +134,10 @@
          temp.clear ();
 
 
-     }
+     }*/
 
      // Second largest element computed in log(n)-1 comparisons
-     max2 = t1 [t1.size () - 1][0];
+     //max2 = t1 [t1.size () - 1][0];
 
      std::cout << "\n\t First largest : " << max1 << '\n';
      std::cout << "\t Second largest : " << max2 << '\n';

@@ -106,39 +106,6 @@
          }
      }
 
-    /* n = v.size ();
-     // Searching for second largest element in the unordered set
-     t1.push_back (v);
-     for (int i = 0; i < n-1; i += 2)
-         temp.push_back ( (v [i] > v [i+1])?v [i]: v [i+1]);
-
-     if (n%2 != 0)
-         temp [temp.size ()-1] = temp [temp.size ()-1] > v [n-1]? temp [temp.size ()-1]:v [n-1];
-
-     t1.push_back (temp);
-     v.clear ();
-     v = temp;
-     temp.clear ();
-     while (v.size () != 1) {
-
-         n = v.size ();
-         for (int i = 0; i < v.size ()-1; i += 2)
-             temp.push_back ( (v [i] > v [i+1])?v [i]: v [i+1]);
-         if (n%2 != 0)
-             temp [temp.size ()-1] = temp [temp.size ()-1] > v [n-1]? temp [temp.size ()-1]:v [n-1];
-
-         t1.push_back (temp);
-
-         v.clear ();
-         v = temp;
-         temp.clear ();
-
-
-     }*/
-
-     // Second largest element computed in log(n)-1 comparisons
-     //max2 = t1 [t1.size () - 1][0];
-
      std::cout << "\n\t First largest : " << max1 << '\n';
      std::cout << "\t Second largest : " << max2 << '\n';
 

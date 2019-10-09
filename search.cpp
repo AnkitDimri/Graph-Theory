@@ -1,9 +1,12 @@
 /****************************************************************************************
  *                                                                                      *
- *  @Ankit Dimri                                                                        *
- *  A implimentation of a code to find the first and second largest element in an       *
+ *  @Author: Ankit Dimri                                                                *
+ *  A implementation of a code to find the first and second largest element in an       *
  *  unordered set in n+log(n)-1 comparisons where n is the length of the set.           *
  *  HINT: Finding the largest in n-1 comparisons and 2nd largest in log(n) comparisons  *
+ *  The implementation is done in C++ with use of vector library.                       *
+ *  Run this file using command g++ search.cpp -o search (This will create a object     *
+ *  file for this program). Now execute the object file using ./search.                 *
  *                                                                                      *
  ****************************************************************************************/
 
@@ -15,6 +18,8 @@
   * largerst element we intend to find. This though takes n-1 comparisons to find the
   * first largest element. and second largest in log (n) comparions.
   */
+
+//Libraries used
 #include <iostream>
 #include <vector>
 #include <limits.h>
@@ -48,7 +53,7 @@
 
      t.push_back (temp); // Add tree levels with half number of nodes
      v.clear (); // clear the vector for reuse
-     v = temp;
+     v = temp; //assigning vector temp to v
      temp.clear (); // clear the vector for reuse
      /* loop till the top element is found */
      while (v.size () != 1) {
@@ -106,8 +111,8 @@
          }
      }
 
-     std::cout << "\n\t First largest : " << max1 << '\n';
-     std::cout << "\t Second largest : " << max2 << '\n';
+     std::cout << "\n\t First largest : " << max1 << '\n'; //prints the first largest number
+     std::cout << "\t Second largest : " << max2 << '\n'; //prints the second largest number
 
      return 0;
  }

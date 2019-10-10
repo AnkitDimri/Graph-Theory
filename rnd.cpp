@@ -4,9 +4,12 @@
  *  A simple code to find the radius and diamemter of a given graph                     *
  *  Radius and diameter of a graph are minimum and maximum eccentricity respectively    *
  *  of any node or vertex in a graph                                                    *
+ *  The code is implemented in C++ using queues and vectors.                            *
+ *  Run this code using the following command g++ rnd.cpp -o rnd (this will create a    *
+ *  object file for this program), after this execute this object file using ./rnd      *
  *                                                                                      *
  ****************************************************************************************/
-
+//Libraries used
 #include <iostream>
 #include <vector>
 #include <queue>

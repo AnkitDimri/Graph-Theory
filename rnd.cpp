@@ -9,7 +9,7 @@
  *  object file for this program), after this execute this object file using ./rnd      *
  *                                                                                      *
  ****************************************************************************************/
-//Libraries used
+/* Libraries used */
 #include <iostream>
 #include <vector>
 #include <queue>

@@ -19,7 +19,7 @@
   * first largest element. and second largest in log (n) comparions.
   */
 
-//Libraries used
+// Libraries used
 #include <iostream>
 #include <vector>
 #include <limits.h>

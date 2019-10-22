@@ -108,17 +108,19 @@
 
          /* case to handle when the lenght of level vector is odd */
          if (n%2 != 0) {
-             if (t [i][n-2] == max1 || t [0][n-3] == max1) {
-                 //v.push_back (t [i][n-1]);
+
+             if (t [i][n-2] == max1 || t [0][n-3] == max1)
                  if (t [i][n-1] > max2)
                      max2 = t [i][n-1];
-             }
+
 
              else if (t [i][n-1] == max1) {
-                 //v.push_back (t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]);
-                 int m;
-                 if ((m = t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]) > max2)
-                     max2 = m;
+
+                    int m;
+                    /* Use terinary operator to find the maximum */ 
+                    if ((m = t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]) > max2)
+                       max2 = m;
+
              }
          }
      }

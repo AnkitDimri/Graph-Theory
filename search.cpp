@@ -16,7 +16,12 @@
   * find the larger or the smaller number of the pair and put in the next layer.
   * Traverses similarly into an inverted tree and the last level consists of the
   * largerst element we intend to find. This though takes n-1 comparisons to find the
-  * first largest element. and second largest in log (n) comparions.
+  * first largest element. The second largest element is found by traversing the path
+  * from root element to the leaf passing through each node pair which consists of
+  * comparisons with the largest element. Now comparing only these elements of the
+  * path, we find the second largest element. This takes log(n) comparisons as the
+  * number of compared elements is the length/height/depth of the tree created
+  * to find the largest element.
   */
 
 /* Libraries used */

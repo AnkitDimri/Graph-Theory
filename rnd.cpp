@@ -1,6 +1,6 @@
 /****************************************************************************************
  *                                                                                      *
- *  @Ankit Dimri                                                                        *
+ *  @Author: Ankit Dimri                                                                        *
  *  A simple code to find the radius and diamemter of a given graph                     *
  *  Radius and diameter of a graph are minimum and maximum eccentricity respectively    *
  *  of any node or vertex in a graph                                                    *
@@ -100,11 +100,11 @@
      return E;
  }
 
+ /*
+  *  Radius is the minimum eccentricity
+  *  Diameter is the maxium eccentricity in the graph
+  */
  void rnd (std::vector <int> &e) {
-      /*
-       *  Radius is the minimum eccentricity
-       *  Diameter is the maxium eccentricity in the graph
-       */
      std::cout << "\n\n\t Radius : " << *std::min_element (e.begin (), e.end ()) << '\n';
      std::cout << "\t Diameter : " << *std::max_element (e.begin (), e.end ()) << '\n';
  }

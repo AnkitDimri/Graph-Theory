@@ -117,7 +117,7 @@
              else if (t [i][n-1] == max1) {
 
                     int m;
-                    /* Use terinary operator to find the maximum */ 
+                    /* Use terinary operator to find the maximum */
                     if ((m = t [i][n-2] > t [i][n-3]? t [i][n-2]:t [i][n-3]) > max2)
                        max2 = m;
 
@@ -125,8 +125,8 @@
          }
      }
 
-     std::cout << "\n\t First largest : " << max1 << '\n'; //prints the first largest number
-     std::cout << "\t Second largest : " << max2 << '\n'; //prints the second largest number
+     std::cout << "\n\t First largest element is: " << max1 << '\n'; //prints the first largest number
+     std::cout << "\t Second largest element is: " << max2 << '\n'; //prints the second largest number
 
      return 0;
  }

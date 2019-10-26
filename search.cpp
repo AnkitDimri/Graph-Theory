@@ -125,8 +125,8 @@
          }
      }
 
-     std::cout << "\n\t First largest element is: " << max1 << '\n'; //prints the first largest number
-     std::cout << "\t Second largest element is: " << max2 << '\n'; //prints the second largest number
+     std::cout << "\n\t First largest element in the set: " << max1 << '\n'; //prints the first largest number
+     std::cout << "\t Second largest element in the set: " << max2 << '\n'; //prints the second largest number
 
      return 0;
  }
